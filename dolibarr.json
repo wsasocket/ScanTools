@@ -1,0 +1,93 @@
+{
+  "Servers": [
+    {
+      "id": 3,
+      "Name": "dolibarr",
+      "PORT": 80,
+      "Type": "URL",
+      "Tag": "Server: Apache/2.43.3 (ubuntu);\r\nX-Powered-By: PHP/5.4.3\r\nSet-Cookie: DOLSESSID=1234567890",
+      "Ref": "gb_dolibarr_detect.nasl",
+      "Revision": "9949",
+      "URLS": [
+        {
+          "URL": "/index.php",
+          "Method": "GET",
+          "Content": "<html><title>Dolibarr</title><br>Copyright © 1995, 2018, dolibarr.org  All rights reserved.<a>Dolibarr 7.0.0</a></html>"
+        },
+        {
+          "URL": "/",
+          "Method": "GET",
+          "Content": "<html><title>Dolibarr</title><br>Copyright © 1995, 2018, dolibarr.org  All rights reserved.<a>Dolibarr 7.0.0</a></html>"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "Name": "monstra",
+      "PORT": 80,
+      "Type": "URL",
+      "Tag": "Server: Apache/2.43.3 (ubuntu);\r\n",
+      "Ref": "gb_dolibarr_detect.nasl",
+      "Revision": "9949",
+      "URLS": [
+        {
+          "URL": "/",
+          "Method": "GET",
+          "Content": "<html><meta name=\"generator\" content=\"Powered by Monstra\"><title>Monstra</title><div><a href=\"http://monstra.org\" target=\"_blank\">Monstra</a> 3.0.0 </div></html>"
+        },
+        {
+          "URL": "/monstra",
+          "Method": "GET",
+          "Content": "<html><meta name=\"generator\" content=\"Powered by Monstra\"><title>Monstra</title><div><a href=\"http://monstra.org\" target=\"_blank\">Monstra</a> 3.0.0 </div></html>"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "Name": "moodle",
+      "PORT": 80,
+      "Type": "URL",
+      "Tag": "Server: Apache/2.43.3 (ubuntu);\r\nX-Powered-By: PHP/5.4.3\r\nSet-Cookie: MoodleSession=1234567890",
+      "Ref": "gb_dolibarr_detect.nasl",
+      "Revision": "9949",
+      "URLS": [
+        {
+          "URL": "/moodle",
+          "Method": "GET",
+          "Content": "<a href=\"http://moodle.org/\"><img src=\"pix/moodlelogo.gif\" title=.Moodle 3.4.1 Build: 1022"
+        },
+        {
+          "URL": "/moodle/admin/environment.xml",
+          "Method": "GET",
+          "Content": "<MOODLE version=\"3.4.1\""
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "Name": "joomla",
+      "PORT": 80,
+      "Type": "URL",
+      "Tag": "Server: Apache/2.43.3 (ubuntu);\r\nX-Powered-By: PHP/5.4.3\r\nSet-Cookie: MoodleSession=1234567890",
+      "Ref": "gb_dolibarr_detect.nasl",
+      "Revision": "9949",
+      "URLS": [
+        {
+          "URL": "/cms/index.php",
+          "Method": "GET",
+          "Content": "  content=\"joomla "
+        },
+        {
+          "URL": "/cms/administrator/",
+          "Method": "GET",
+          "Content": "lang=\"eb-GB\""
+        },
+        {
+          "URL": "/cms/administrator/language/eb-GB/eb-GB.xml",
+          "Method": "GET",
+          "Content": "<version>3.1.0</version>"
+        }
+      ]
+    }
+  ]
+}

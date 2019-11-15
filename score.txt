@@ -1,0 +1,37 @@
+BaseScore = (.6*Impact +.4*Exploitability-1.5)*f(Impact)
+ 
+Impact = 10.41 * (1 - (1 - ConfImpact) * (1 - IntegImpact) * (1 - AvailImpact))
+
+Exploitability = 20 * AccessComplexity * Authentication * AccessVector
+
+f(Impact) = 0 if Impact=0; 1.176 otherwise
+ 
+AccessComplexity = case AccessComplexity of
+                        high:   0.35
+                        medium: 0.61
+                        low:    0.71
+ 
+Authentication   = case Authentication of
+                        Requires no authentication:                    0.704
+                        Requires single instance of authentication:    0.56
+                        Requires multiple instances of authentication: 0.45
+ 
+AccessVector     = case AccessVector of
+                        Requires local access:    0.395
+                        Local Network accessible: 0.646
+                        Network accessible:       1
+ 
+ConfImpact       = case ConfidentialityImpact of
+                        none:             0
+                        partial:          0.275
+                        complete:         0.660
+ 
+IntegImpact      = case IntegrityImpact of
+                        none:             0
+                        partial:          0.275
+                        complete:         0.660
+ 
+AvailImpact      = case AvailabilityImpact of
+                        none:             0
+                        partial:          0.275
+                        complete:         0.660

@@ -1,0 +1,366 @@
+{
+  "Servers": [
+    {
+      "id": 0,
+      "Name": "Apache",
+      "PORT": 80,
+      "Type": "HDR",
+      "Tag": "Server: Apache/2.43.3 (ubuntu);",
+      "Ref": "secpod_apache_detect.nasl",
+      "Revision": "8140"
+    },
+    {
+      "id": 1,
+      "Name": "PHP@Apache",
+      "PORT": 8080,
+      "Type": "HDR",
+      "Tag": "Server: Apache/2.43.3 (ubuntu);\r\nX-Powered-By: PHP/5.4.3",
+      "Ref": "gb_php_detect.nasl",
+      "Revision": "8742"
+    },
+    {
+      "id": 2,
+      "Name": "CouchDB",
+      "PORT": 5984,
+      "Type": "HDR",
+      "Tag": "Server: CouchDB/2.0.0 (Ubuntu);",
+      "Ref": "gb_couchdb_detect.nasl",
+      "Revision": "7849"
+    },
+    {
+      "id": 3,
+      "Name": "Oracle WebContent",
+      "PORT": 8080,
+      "Type": "URL",
+      "Tag": "Server: WebLogic/1.0 (Ubuntu);",
+      "Ref": "gb_oracle_webcenter_content_detect.nasl",
+      "Revision": "9039",
+      "URLS": [
+        {
+          "URL": "/cs/login/login.htm",
+          "Method": "GET",
+          "Content": "<title>Oracle WebCenter Content Sign In</title>\r\nCopyright © 1995, 2018, Oracle and/or its affiliates. All rights reserved."
+        },
+        {
+          "URL": "/_ocsh/help/state",
+          "Method": "GET",
+          "Content": "<title> 10g Release 1 (11.1.0) - Oracle WebCenter Content Help</title>\r\nDynamic Converter Online Help"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "Name": "Apache Struts",
+      "PORT": 8080,
+      "Type": "URL",
+      "Tag": "Server: Apache Struts/2.5.10.1 (ubuntu);",
+      "Ref": "gb_apache_struts_detect.nasl",
+      "Revision": "8915",
+      "URLS": [
+        {
+          "URL": "/docs/docs/index.html",
+          "Method": "GET",
+          "Content": "<title>Apache Struts Document</title>"
+        },
+        {
+          "URL": "/docs/docs/struts2-core-apidocs/help-doc.html",
+          "Method": "GET",
+          "Content": "<title>API Help Struts 2 Core 2.5.10.1 API</title>"
+        },
+        {
+          "URL": "/src/pom.xml",
+          "Method": "GET",
+          "Content": "<title>Apache Struts 2<title> \r\n <modelVersion><version>2.5.10.1</version><packaging>"
+        },
+        {
+          "URL": "/docs/docs/home.html",
+          "Method": "GET",
+          "Content": "<title> Getting Started Home Distributions </title><html>Release Notes 2.5.10.1</html>"
+        },
+        {
+          "URL": "/docs/docs/guides.html",
+          "Method": "GET",
+          "Content": "<title>Migration Guide Core Developers Guide Release Notes</title><html>Version Notes 2.5.10.1</html>"
+        },
+        {
+          "URL": "/src/src/site/xdoc/index.xml",
+          "Method": "GET",
+          "Content": "<title>Apache Struts<title><html>version 2.5.10.1</html>"
+        },
+        {
+          "URL": "/utils.js",
+          "Method": "GET",
+          "Content": "var StrutsUtils ="
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "Name": "Oracle Database Server",
+      "PORT": 1521,
+      "Type": "TCP",
+      "Ref": "oracle_tnslsnr_version.nasl",
+      "Revision": "8230",
+      "DATA": [
+        {
+          "Ask": "",
+          "Reply": "0x28,0x44,0x45,0x53,0x43,0x52,0x49,0x50,0x54,0x49,0x4f,0x4e,0x3d,0x28,0x54,0x4d,0x50,0x3d,0x29,0x28,0x56,0x53,0x4e,0x4e,0x55,0x4d,0x3d,0x31,0x38,0x36,0x36,0x34,0x37,0x38,0x30,0x37,0x29,0x28,0x45,0x52,0x52,0x3d,0x31,0x31,0x38,0x39,0x29,0x28,0x45,0x52,0x52,0x4f,0x52,0x5f,0x53,0x54,0x41,0x43,0x4b,0x3d,0x28,0x45,0x52,0x52,0x4f,0x52,0x3d,0x28,0x43,0x4f,0x44,0x45,0x3d,0x31,0x31,0x38,0x39,0x29,0x28,0x45,0x4d,0x46,0x49,0x3d,0x34,0x29,0x29,0x29,0x29 "
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "Name": "NTP Server",
+      "PORT": 123,
+      "Type": "UDP",
+      "Ref": "ntp_open.nasl",
+      "Revision": "7535",
+      "DATA": [
+        {
+          "Ask": "",
+          "Reply": "0x73,0x79,0x73,0x74,0x65,0x6d,0x3d,0x27,0x57,0x69,0x6e,0x64,0x6f,0x77,0x73,0x27,0x2c,0x70,0x72,0x6f,0x63,0x65,0x73,0x73,0x6f,0x72,0x3d,0x27,0x50,0x50,0x43,0x27,0x2c,0x6e,0x74,0x70,0x64,0x20,0x34,0x2e,0x32,0x2e,0x38,0x70,0x35"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "Name": "Zimbra Mail Server",
+      "PORT": 8088,
+      "Type": "URL",
+      "Tag": "Server: Zimbra/8.8.1 (Darwin);",
+      "Ref": "gb_zimbra_admin_console_detect.nasl",
+      "Revision": "8745",
+      "URLS": [
+        {
+          "URL": "/",
+          "Method": "GET",
+          "Content": "<title>Zimbra Web Client Sign In</title>"
+        },
+        {
+          "URL": "/js/zimbraMail/share/model/ZmSettings.js",
+          "Method": "GET",
+          "Content": "this.registerSetting(\"CLIENT_VERSION\", {type:ZmSetting.T_CONFIG, defaultValue:\"8.8.1_GA_1670\"});"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "Name": "Axis Network Camera",
+      "PORT": 21,
+      "Type": "TBA",
+      "Ref": "gb_axis_network_cameras_ftp_detect.nasl",
+      "Revision": "6938",
+      "DATA": [
+        {
+          "Ask": "",
+          "Reply": "220 Axis M1025 Network Camera 5.0.22"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "Name": "Cisco Smart Install",
+      "PORT": 4786,
+      "Type": "TCP",
+      "Ref": "gb_cisco_smi_enabled.nasl",
+      "Revision": "5317",
+      "DATA": [
+        {
+          "Ask": "0x00,0x00,0x00,0x01,0x00,0x00,0x00,0x01,0x00,0x00,0x00,0x03,0x00,0x00,0x00,0x01,0x00",
+          "Reply": "0x00,0x00,0x00,0x04,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x04,0x00,0x00,0x00,0x04,0x00,0x00,0x00,0x01"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "Name": "Apache Tomcat",
+      "PORT": 8080,
+      "Type": "URL",
+      "Tag": "Apache Tomcat/7.0.5",
+      "Ref": "gb_apache_tomcat_detect.nasl",
+      "Revision": "8235",
+      "URLS": [
+        {
+          "URL": "/index.jsp",
+          "Method": "GET",
+          "Content": "Apache Tomcat Version 7.0.5"
+        },
+        {
+          "URL": "/RELEASE-NOTES.txt",
+          "Method": "GET",
+          "Content": "Apache Tomcat Version 7.0.5"
+        },
+        {
+          "URL": "/docs/RELEASE-NOTES.txt",
+          "Method": "GET",
+          "Content": "Apache Tomcat Version 7.0.5"
+        },
+        {
+          "URL": "/tomcat-docs/changelog.html",
+          "Method": "GET",
+          "Content": "<strong>Tomcat 7.0.5 </strong>"
+        },
+        {
+          "URL": "r(^/OpenVAS_[\\w\\d]+.jsp)",
+          "Method": "PUT",
+          "Code": 201,
+          "Content": "Reproducing CVE-2017-12615"
+        },
+        {
+          "URL": "r(^/OpenVAS_[\\w\\d]+.jsp)",
+          "Method": "GET",
+          "Content": "Reproducing CVE-2017-12615"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "Name": "drupal Server",
+      "PORT": 80,
+      "Type": "URL",
+      "Tag": "Server: Apache/2.43.3 (ubuntu);",
+      "Ref": "drupal_detect.nasl",
+      "Revision": "9480",
+      "URLS": [
+        {
+          "URL": "/update.php",
+          "Method": "GET",
+          "Content": "Access denied for user drupal"
+        },
+        {
+          "URL": "/",
+          "Method": "GET",
+          "Content": "<meta name=\"Generator\" content=\"Drupal >"
+        },
+        {
+          "URL": "/CHANGELOG.txt",
+          "Method": "GET",
+          "Content": "Drupal 8.0.1, 2018-04-25"
+        },
+        {
+          "URL": "/user/register",
+          "Method": "POST",
+          "Content": "$mail[#markup]$[{\"command\":\"insert\",\"method\":\"replaceWith\",\"selector\":null,\"data\":\"16\u003Cspan class=\u0022ajax-new-content\u0022\u003E\u003C\/span\u003E\",\"settings\":null}]"
+        },
+        {
+          "URL": "/",
+          "Method": "POST",
+          "Content": "$mail[#markup]$[{\"command\":\"insert\",\"method\":\"replaceWith\",\"selector\":null,\"data\":\"16\u003Cspan class=\u0022ajax-new-content\u0022\u003E\u003C\/span\u003E\",\"settings\":null}]"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "Name": "IBM DB2",
+      "PORT": 523,
+      "Type": "UDP",
+      "Ref": "oracle_tnslsnr_version.nasl",
+      "Revision": "8230",
+      "DATA": [
+        {
+          "Ask": "",
+          "Reply": "0x44,0x42,0x32,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x53,0x51,0x4C,0x44,0x42,0x20,0x2f,0x20,0x20,0x20,0x20,0x30,0x39,0x30,0x35,0x31,0x20,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "Name": "phpMyadmin",
+      "PORT": 80,
+      "Type": "URL",
+      "Tag": "Server: Apache/2.45.0 (RedHat);",
+      "Ref": "gb_red_hat_jboss_eap_server_detect.nasl",
+      "Revision": "6701",
+      "URLS": [
+        {
+          "URL": "/phpmyadmin/index.php",
+          "Method": "GET",
+          "Content": "<title>phpMyAdmin 2.11.9.0 rc1 </title><a pma_username/a> <a pma_password/a>"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "Name": "ActiveMQ",
+      "PORT": 8161,
+      "Type": "URL",
+      "Tag": "Server: ActiveMQ/1.0.22 (Darwin);",
+      "Ref": "gb_red_hat_jboss_eap_server_detect.nasl",
+      "Revision": "6701",
+      "URLS": [
+        {
+          "URL": "/admin/index.jsp",
+          "Method": "GET",
+          "Content": "<title>ActiveMQ</title>"
+        },
+        {
+          "URL": "r/admin/createDestination.action\\?JMSDestinationType=queue&JMSDestination=OpenVAS-XSS-Test-[\\w\\d]+",
+          "Method": "GET",
+          "Content": "<title>ActiveMQ</title>"
+        },
+        {
+          "URL": "/admin/queues.jsp",
+          "Method": "GET",
+          "Content": "<title>ActiveMQ</title>$JMSDestination$"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "Name": "Miscrsoft SQLServer",
+      "PORT": 1433,
+      "Type": "TCP",
+      "Ref": "oracle_tnslsnr_version.nasl",
+      "Revision": "8230",
+      "DATA": [
+        {
+          "Ask": "0x00:0x12,0x01,0x00,0x2F",
+          "Reply": "0x04,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x04,0x00,0x0A,0x32,0x00,0x4d,0x50,0x3d,0x00,0x4d,0x50,0x3d,0x4e,0x4e,0x55,0x4d,0x3d,0x31,0x38,0x36,0x36,0x34,0x37,0x35,0x35,0x33,0x29,0x28,0x45,0x52,0x52,0x3d,0x31,0x31,0x38,0x39,0x29,0x28,0x45,0x52,0x52,0x4f,0x52,0x5f,0x53,0x54,0x41,0x43,0x4b,0x3d,0x28,0x45,0x52,0x52,0x4f,0x52,0x3d,0x28,0x43,0x4f,0x44,0x45,0x3d,0x31,0x31,0x38,0x39,0x29,0x28,0x45,0x4d,0x46,0x49,0x3d,0x34,0x29,0x29,0x29,0x29 "
+        },
+        {
+          "Ask": "0x27:0x73,0x61|0x46:0x61,0x64,0x6D,0x69,0x6E,0x00",
+          "Reply": "0x04,0x00,0x00,0x0A,0x00,0x00,0x00,0x00,0xE3,0x00,0x04,0x00,0x0A,0x32"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "Name": "Sybase Database",
+      "PORT": 5000,
+      "Type": "TCP",
+      "Ref": "sybase_detect.nasl",
+      "Revision": "8230",
+      "DATA": [
+        {
+          "Describe": "",
+          "Ask": "0x27:0x4E,0x65,0x73,0x73,0x75,0x73,0x2D",
+          "Reply": "0x04,0x4c,0x6f,0x67,0x69,0x6e,0x20,0x66,0x61,0x69,0x6c,0x65,0x64,0x00"
+        },
+        {
+          "Describe": "default user/passwd :dba/sql",
+          "Ask": "0x27:0x64,0x62,0x61|0x46:0x73,0x71,0x6C,0x00",
+          "Reply": "0x04,0x0b,0x09,0x02,0x00,0x00,0x00,0x00,0xE3,0x00,0x04,0x00,0x0A,0x32"
+        },
+        {
+          "Describe": "blank password sa/",
+          "Ask": "0x27:0x73,0x61|0x46:0x00,0x00,0x00,0x00",
+          "Reply": "0x04,0x0b,0x09,0x02,0x00,0x00,0x00,0x00,0xE3,0x00,0x04,0x00,0x0A,0x32"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "Name": "NFS-utils",
+      "PORT": 530,
+      "Type": "UDP",
+      "Ref": "secpod_rpc_portmap.nasl",
+      "Revision": "7535",
+      "DATA": [
+        {
+          "Ask": "0x00:0x78, 0xE0, 0x80, 0x4D, 0x00, 0x00",
+          "Reply": "0x52,0x50,0x43,0x20,0x6e,0x66,0x73,0x2d,0x75,0x74,0x69,0x6c,0x73,0x20,0x30,0x2e,0x31,0x2e,0x38,0x2e,0x32"
+        }
+      ]
+    }
+  ]
+}
